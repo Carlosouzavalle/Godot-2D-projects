@@ -20,10 +20,10 @@ font_size = 38
 size = Vector2(588, 44)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33cqm"]
-size = Vector2(25.5, 636.781)
+size = Vector2(25.5, 642.985)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xwcet"]
-size = Vector2(581, 49)
+size = Vector2(586, 49)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_p1ry8")
@@ -59,20 +59,20 @@ shape = SubResource("RectangleShape2D_dbls1")
 [node name="LeftWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
-position = Vector2(-11.5, 338.609)
+position = Vector2(-11.5, 333.609)
 shape = SubResource("RectangleShape2D_33cqm")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
-position = Vector2(554.75, 323.406)
+position = Vector2(554.75, 331.508)
 shape = SubResource("RectangleShape2D_33cqm")
 
 [node name="Hole" type="Area2D" parent="."]
 position = Vector2(-9, -292)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(270.5, 976.5)
+position = Vector2(280, 976.5)
 shape = SubResource("RectangleShape2D_xwcet")
 debug_color = Color(0.902257, 0.298494, 0.210568, 0.42)
 
@@ -84,4 +84,23 @@ position = Vector2(271, 644)
 scale = Vector2(1, 0.685417)
 SPEED = 350
 
+[node name="Positions" type="Node2D" parent="."]
+
+[node name="Pos_01" type="Marker2D" parent="Positions"]
+position = Vector2(-103, 93)
+
+[node name="Pos_02" type="Marker2D" parent="Positions"]
+position = Vector2(-96, 194)
+
+[node name="Pos_03" type="Marker2D" parent="Positions"]
+position = Vector2(604, 127)
+
+[node name="Pos_04" type="Marker2D" parent="Positions"]
+position = Vector2(620, 285)
+
+[node name="TimerSpawner" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [connection signal="body_entered" from="Hole" to="." method="_on_hole_body_entered"]
+[connection signal="timeout" from="TimerSpawner" to="." method="_on_timer_spawner_timeout"]

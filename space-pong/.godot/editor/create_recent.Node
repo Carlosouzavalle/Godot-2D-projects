@@ -1,7 +1,11 @@
-Label
-Sprite2D
+Timer
+VisibleOnScreenNotifier2D
 CollisionShape2D
-CharacterBody2D
+Sprite2D
 Area2D
+Marker2D
+Node2D
+Label
+CharacterBody2D
 Camera2D
 StaticBody2D
