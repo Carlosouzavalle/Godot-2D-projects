@@ -51,18 +51,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TopWall" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
 position = Vector2(271, -10)
 shape = SubResource("RectangleShape2D_dbls1")
 
 [node name="LeftWall" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWall"]
 position = Vector2(-11.5, 333.609)
 shape = SubResource("RectangleShape2D_33cqm")
 
 [node name="RightWall" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWall"]
 position = Vector2(554.75, 331.508)
@@ -70,6 +76,8 @@ shape = SubResource("RectangleShape2D_33cqm")
 
 [node name="Hole" type="Area2D" parent="."]
 position = Vector2(-9, -292)
+collision_layer = 16
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
 position = Vector2(280, 976.5)
@@ -78,10 +86,13 @@ debug_color = Color(0.902257, 0.298494, 0.210568, 0.42)
 
 [node name="Ball" parent="." instance=ExtResource("3_33cqm")]
 position = Vector2(269, 597)
+collision_layer = 2
+collision_mask = 29
 
 [node name="Player" parent="." instance=ExtResource("2_dbls1")]
 position = Vector2(271, 644)
 scale = Vector2(1, 0.685417)
+collision_mask = 6
 SPEED = 350
 
 [node name="Positions" type="Node2D" parent="."]

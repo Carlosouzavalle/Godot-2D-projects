@@ -5,6 +5,8 @@ var start_speed = 500
 var incremental_speed = 1.0
 var angle = [-250, 250]
 var pongs = 0
+var max_speed = 1500
+
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("Start") and started == false:
@@ -14,8 +16,12 @@ func _physics_process(delta: float) -> void:
 		var collision = move_and_collide(velocity * delta)
 		if collision != null:
 			if collision.get_collider().name == "TopWall":
-				velocity = velocity.bounce(collision.get_normal()) * incremental_speed
-				pongs +=1
+				if (velocity.length() > max_speed):
+					velocity = velocity.bounce(collision.get_normal())
+					pongs +=1
+				else:
+					pongs +=1
+					velocity = velocity.bounce(collision.get_normal()) * incremental_speed
 				print(pongs)
 			else:
 				velocity = velocity.bounce(collision.get_normal())
