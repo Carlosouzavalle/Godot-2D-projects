@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Space Pong"
 run/main_scene="uid://b8udpkpvs5elv"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [display]
@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 window/size/viewport_width=540
 window/size/viewport_height=660
 window/handheld/orientation=1
+
+[dotnet]
+
+project/assembly_name="Space Pong"
 
 [input]
 

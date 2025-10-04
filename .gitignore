@@ -1,0 +1,22 @@
+# Arquivos de cache e importações do Godot
+.import/
+.godot/
+
+# Arquivos de cache de shaders e configs temporárias
+*.translation
+*.import
+*.md5
+*.vulkan.cache
+
+# Build (quando exporta para desktop ou mobile)
+export/
+*.exe
+*.apk
+*.aab
+*.pck
+*.zip
+
+# Configurações locais (não precisam ir para o Git)
+.editor_settings-3.tres
+.editor_settings-4.tres
+.project_metadata
